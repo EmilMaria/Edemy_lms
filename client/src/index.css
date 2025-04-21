@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&family=Outfit:wght@100..900&family=Pacifico&family=Protest+Riot&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  font-family: Outfit;
+}
