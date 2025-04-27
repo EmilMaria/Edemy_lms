@@ -1,11 +1,14 @@
 import { Webhook } from "svix";
 import User from "../models/User.js";
+// import 'dotenv/config'
 
 // API Controller Function to Manage Clerk User with database
 
 export const clerkWebhooks = async(req , res)=>{
     try{
+        console.log("Webhook received")
        const whook = new Webhook(process.env.CLERK_WEBHOOK_SECRET) 
+       
 
        await whook.verify(JSON.stringify(req.body), {
         "svix-id":req.headers["svix-id"],
@@ -50,7 +53,7 @@ export const clerkWebhooks = async(req , res)=>{
        }
 
     }catch(error){
-        res.json({success: false,message: error.message})
+        res.json({success: false, message: error.message})
         
     }
 }
