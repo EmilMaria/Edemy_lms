@@ -49,6 +49,7 @@ export const clerkWebhooks = async(req , res)=>{
         }
 
         default:
+            res.status(400).json({success:false, message: "Unknown event type"})
             break;
        }
 
